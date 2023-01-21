@@ -1,0 +1,28 @@
+body
+{
+  color: white;
+  background: teal;
+}
+span
+{
+  font-size: 30px;
+}
+#camera , #result , .camera
+{
+  border: 2px double orchid;
+  width: 350px;
+  height: 300px; 
+}
+#result_name
+{
+  color: black;
+}
+._name
+{
+  font-size: 40px;
+}
+.h {
+  font-size: 40px;
+  border-radius: 10px;
+  letter-spacing: 10px;
+}
