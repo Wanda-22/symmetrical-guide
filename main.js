@@ -21,3 +21,40 @@ Webcam.set({
 function modelloaded() {
     console.log("all the models are loaded");
 }
+
+function p() {
+    e=document.getElementById('pic');
+    o.classify(e,ans);
+}
+
+function speak() {
+    var voice=window.speechSynthesis;
+    s1="Prediction is " + p1;
+    var u=new SpeechSynthesisUtterance(s1);
+    voice.speak(u);
+}
+
+
+function ans(error,result) {
+    if (error) {
+        console.log(error);
+    }
+    else{
+        console.log(result);
+        document.getElementById('result_name').innerHTML=result[0].label;
+        p1=result[0].label;
+        speak();
+        if (result[0].label=="UP") {
+            document.getElementById("e").innerHTML="&#9757;";
+        }
+        if (result[0].label=="Nice") {
+            document.getElementById("e").innerHTML="&#128076;";
+        }
+        if (result[0].label=="Raised Hand") {
+            document.getElementById("e").innerHTML="&#128400;";
+        }
+        if (result[0].label=="Hi") {
+            document.getElementById("e").innerHTML="&#128079;";
+        }
+    }
+}
